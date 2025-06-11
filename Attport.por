@@ -175,21 +175,33 @@ programa {
                     escreva(numero, " não é primo.\n")
                 }
             } senao se (n == 10) {
-                inteiro nLetras
-                 cadeia l
+                caracter vogais[] = {
+      'a', 'á', 'à', 'â', 'ã',
+      'e', 'é', 'è', 'ê', 
+      'i', 'í', 'ì', 'î',
+      'o', 'ó','ò', 'ô', 
+      'u', 'ú', 'ù', 'û' 
+    }
+    cadeia palavra
+    inteiro tamanho, quant=0
 
-              escreva("Digite uma string:\n")
-              leia(l)
+    escreva("Digite uma String para ver as vogais:\n ")
+    leia(palavra)
 
-              nLetras = t.numero_caracteres(l)
+    palavra = t.caixa_baixa(palavra)
+    tamanho = t.numero_caracteres(palavra)
 
-              para(inteiro i =0; i<nLetras; i++){ 
-              se(l[i] == "a" e l[i] == "e" e l[i] == "i" e l[i] == "o" e l[i] == "u"){
-              aux++ } }
-              
-              escreva("QTD de vogais = ",nLetras)
-            
-            
+    para(inteiro i = 0; i < tamanho; i++){
+      para(inteiro j = 0; j < 21; j++){
+        se(t.obter_caracter(palavra, i) == vogais[j]){
+          quant++
+          pare
+        }
+      }
+    }
+    escreva("\nA palavra {",palavra,"} possui {",quant,"} vogais\n")
+
+  
             } senao se (n == 11) {
                 inteiro numero, i
                 escreva("Digite um número para ver a tabuada:\n")
