@@ -1,0 +1,171 @@
+Pseudocodigo:
+
+Pseudocódigo:
+
+INÍCIO DO PROGRAMA
+
+ENQUANTO verdadeiro FAÇA
+    ESCREVA menu de opções:
+        1 - Verificação de números
+        2 - Calcular idade
+        3 - Calcular média de números
+        4 - Ler número inteiro
+        5 - Inverter número de 3 dígitos
+        6 - Média de duas notas
+        7 - Celsius para Fahrenheit
+        8 - Fatorial
+        9 - Verificar se número é primo
+        10 - Contar vogais em uma string
+        11 - Tabuada
+        12 - Quilômetros para milhas
+        13 - Reajuste de 5%
+        14 - Calcular IMC
+        15 - Idade em anos/meses/dias/semanas
+        999 - Sair
+
+    LEIA opção
+
+    SE opção == 1 ENTAO
+        REPITA
+            LEIA número
+            SE número > 0 ENTAO
+                ESCREVA "Positivo"
+            SENÃO
+                ESCREVA "Negativo"
+            FIMSE
+
+            SE número % 2 == 0 ENTAO
+                ESCREVA "Par"
+            SENÃO
+                ESCREVA "Ímpar"
+            FIMSE
+
+            verif ← CONVERTER número PARA INTEIRO
+            SE verif - número == 0 ENTAO
+                ESCREVA "Inteiro"
+            SENÃO
+                ESCREVA "Fracionado"
+            FIMSE
+
+            ESCREVA "Digite 999 para sair ou outro número para continuar"
+            LEIA saida
+        ATÉ saida == 999
+
+    SENÃO SE opção == 2 ENTAO
+        LEIA ano_nascimento, mes_nascimento, dia_nascimento
+        LEIA ano_atual, mes_atual, dia_atual
+
+        idade ← ano_atual - ano_nascimento
+
+        SE (mes_atual > mes_nascimento) OU (mes_atual == mes_nascimento E dia_atual >= dia_nascimento) ENTAO
+            aniversario_ocorreu ← VERDADEIRO
+        SENÃO
+            aniversario_ocorreu ← FALSO
+        FIMSE
+
+        SE aniversario_ocorreu == FALSO ENTAO
+            idade ← idade - 1
+        FIMSE
+
+        CALCULE dias_para_aniversario com base nas datas
+
+        ESCREVA idade e dias_para_aniversario
+
+    SENÃO SE opção == 3 ENTAO
+        LEIA quantidade
+        soma ← 0
+        PARA i DE 1 ATÉ quantidade FAÇA
+            LEIA número
+            soma ← soma + número
+        FIMPARA
+        média ← soma / quantidade
+        ESCREVA média
+
+    SENÃO SE opção == 4 ENTAO
+        LEIA número
+        ESCREVA número
+
+    SENÃO SE opção == 5 ENTAO
+        LEIA número (de 3 dígitos)
+        centenas ← número / 100
+        dezenas ← (número % 100) / 10
+        unidades ← número % 10
+        ESCREVA número invertido como unidades, dezenas, centenas
+
+    SENÃO SE opção == 6 ENTAO
+        LEIA nota1, nota2
+        média ← (nota1 + nota2) / 2
+        ESCREVA média
+
+    SENÃO SE opção == 7 ENTAO
+        LEIA celsius
+        fahrenheit ← (celsius * 9 / 5) + 32
+        ESCREVA fahrenheit
+
+    SENÃO SE opção == 8 ENTAO
+        LEIA número
+        fatorial ← 1
+        PARA i DE 1 ATÉ número FAÇA
+            fatorial ← fatorial * i
+        FIMPARA
+        ESCREVA fatorial
+
+    SENÃO SE opção == 9 ENTAO
+        LEIA número
+        primo ← VERDADEIRO
+        SE número < 2 ENTAO
+            primo ← FALSO
+        SENÃO
+            PARA i DE 2 ATÉ RAIZ_QUADRADA(numero) FAÇA
+                SE número % i == 0 ENTAO
+                    primo ← FALSO
+                    SAIR DO LAÇO
+                FIMSE
+            FIMPARA
+        FIMSE
+        ESCREVA se é primo ou não
+
+    SENÃO SE opção == 10 ENTAO
+        LEIA palavra
+        palavra ← CONVERTER PARA MINÚSCULAS
+        quant ← 0
+        PARA cada caractere DA palavra FAÇA
+            SE caractere está na lista de vogais ENTAO
+                quant ← quant + 1
+            FIMSE
+        FIMPARA
+        ESCREVA quant
+
+    SENÃO SE opção == 11 ENTAO
+        LEIA número
+        PARA i DE 1 ATÉ 10 FAÇA
+            ESCREVA número * i
+        FIMPARA
+
+    SENÃO SE opção == 12 ENTAO
+        LEIA quilometros
+        milhas ← quilometros * 0.621371
+        ESCREVA milhas
+
+    SENÃO SE opção == 13 ENTAO
+        LEIA valor
+        reajuste ← valor * 1.05
+        ESCREVA reajuste
+
+    SENÃO SE opção == 14 ENTAO
+        LEIA peso, altura
+        imc ← peso / (altura * altura)
+        ESCREVA condição baseada no IMC
+
+    SENÃO SE opção == 15 ENTAO
+        LEIA ano_nascimento, ano_atual
+        idade ← ano_atual - ano_nascimento
+        ESCREVA idade em anos, meses, dias e semanas
+
+    SENÃO SE opção == 999 ENTAO
+        ESCREVA "Encerrando programa..."
+        SAIR DO LAÇO
+    FIMSE
+FIMENQUANTO
+
+FIM DO PROGRAMA
